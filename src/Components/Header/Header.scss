@@ -1,0 +1,16 @@
+.header__container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__logo {
+    width: 100px;
+    padding: 5px;
+}
+
+.header__home {
+    color: black;
+    font-size: 22px;
+}

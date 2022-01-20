@@ -1,0 +1,37 @@
+.searchResults__all__item__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.searchResults__image {
+    border-radius: 6px;
+    width: 100%;
+    height: 351px;
+}
+
+.searchResults__one__item__container {
+    padding: 7px;
+    width: 250px;
+}
+
+.searchResults__link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+    background-color: white;
+
+    &:hover {
+        transition: 0.4s;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border-radius: 6px;
+    }
+}
+
+.searchResults__name {
+    text-align: center;
+    font-size: 22px;
+}

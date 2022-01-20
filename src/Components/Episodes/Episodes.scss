@@ -1,0 +1,44 @@
+.episodes__container{
+background-color: white;
+margin: 15px;
+border-radius: 6px;
+padding: 10px;
+}
+
+.episodes__heading{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0 0 5px 0;
+}
+
+.episodes__select{
+    margin: 0 0 5px 5px;
+    width: 20%;
+}
+
+.episodes__episodes__container{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.episodes__episode__container{
+    display: flex;
+    gap: 5px;
+}
+
+.episodes__small__picture{
+    width: 120px;
+    border-radius: 6px;
+}
+
+.episodes__episode__description{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.episodes__episode__header{
+    font-weight: bold;
+}

@@ -1,0 +1,39 @@
+.IndividualShowInfo__name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 0;
+    background-color: white;
+    margin: 15px;
+    border-radius: 6px;
+}
+
+.IndividualShowInfo__info__part {
+    display: flex;
+    justify-content: center;
+    margin: 0 15px;
+    
+}
+
+.IndividualShowInfo__photo__container {
+    background-color: white;
+    padding: 7px;
+    border-radius: 6px;
+}
+
+.IndividualShowInfo__photo {
+    width: 250px;
+    border-radius: 6px;
+
+}
+
+.IndividualShowInfo__text__container {
+    margin-left: 15px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.IndividualShowInfo__text {
+    font-weight: bold;
+}
