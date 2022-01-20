@@ -1,44 +1,69 @@
-.episodes__container{
-background-color: white;
-margin: 15px;
-border-radius: 6px;
-padding: 10px;
+.episodes__container {
+    background-color: white;
+    margin: 15px;
+    border-radius: 6px;
+    padding: 10px;
 }
 
-.episodes__heading{
+.episodes__heading {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
     padding: 0 0 5px 0;
 }
 
-.episodes__select{
+.episodes__select {
+    border-radius: 6px;
+    padding: 3px;
     margin: 0 0 5px 5px;
     width: 20%;
 }
 
-.episodes__episodes__container{
-display: flex;
-flex-direction: column;
-gap: 10px;
-}
-
-.episodes__episode__container{
+.episodes__episodes__container {
     display: flex;
-    gap: 5px;
+    flex-direction: column;
 }
 
-.episodes__small__picture{
+.episodes__picture__container{
+    display: flex;
+    align-items: center;
+}
+
+.episodes__episode__container {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.episodes__episode__container:nth-child(2n+1) {
+    background-color: rgb(241, 241, 241);
+}
+
+.episodes__small__picture {
     width: 120px;
     border-radius: 6px;
 }
 
-.episodes__episode__description{
+.episodes__episode__description__container {
     width: 100%;
+    gap: 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.episodes__episode__header{
+.episodes__episode__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.episodes__episode__header {
     font-weight: bold;
+}
+
+.episodes__description__rating {
+    display: flex;
+    flex-shrink: 0;
 }

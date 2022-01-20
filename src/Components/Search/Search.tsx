@@ -8,22 +8,18 @@ type Props = {
     submitHandler: () => void
 }
 
-const Search:FC<Props> = ({ setSearchValue, searchValue, submitHandler }) => {
-  console.log(123);
+const Search:FC<Props> = ({ setSearchValue, searchValue, submitHandler }) => (
+  <div className="search__container">
+    <input
+      className="search__input"
+      type="text"
+      value={searchValue}
+      onChange={(e) => setSearchValue(e.target.value)}
+      placeholder="Show name"
+    />
 
-  return (
-    <div className="search__container">
-      <input
-        className="search__input"
-        type="text"
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="Show name"
-      />
-
-      <button className="search__button" onClick={submitHandler}>Search</button>
-    </div>
-  );
-};
+    <button className="search__button" onClick={submitHandler}>Search</button>
+  </div>
+);
 
 export default Search;

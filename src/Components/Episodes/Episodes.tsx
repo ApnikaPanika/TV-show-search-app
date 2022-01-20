@@ -1,7 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import './Episodes.scss';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { episodeTypeList } from '../../Data/Types';
+import questionMark from '../../Assets/Photos/questionMark.png';
 
 type Props = {
     showId: number
@@ -30,8 +33,6 @@ const Episodes:FC<Props> = ({ showId }) => {
 
   const episodeList = allEpisodeList.filter((item) => item.season === +choosenSeason);
 
-  console.log(episodeList);
-
   return (
     <div className="episodes__container">
       <h1 className="episodes__heading"> Seasons & episodes </h1>
@@ -42,17 +43,45 @@ const Episodes:FC<Props> = ({ showId }) => {
             <option value={option} key={option}>{option}</option>
           ))}
         </select>
-
       </div>
+
       <div className="episodes__episodes__container">
         {episodeList.map((item) => (
           <div className="episodes__episode__container" key={item.id}>
-            <img className="episodes__small__picture" src={item.image.original} alt="" />
-            <div className="episodes__episode__description">
-              <h3 className="episodes__episode__header">{item.name}</h3>
-              <h3>{item.rating.average}</h3>
+            <div className="episodes__picture__container">
+              <img
+                className="episodes__small__picture"
+                src={
+                item.image === null ? questionMark : item.image.original
+                }
+                alt="episode_photo"
+              />
             </div>
+            <div className="episodes__episode__description__container">
+              <div className="episodes__episode__description">
 
+                <h3 className="episodes__episode__header">
+                  {item.number}
+                  .
+                  {item.name}
+                </h3>
+
+                <p>
+                  {item.summary === '' || item.summary === null ? 'There is no description, for this episode.'
+                    : item.summary.replace(/<(?<=<).*?(?=>)>/g, '')}
+
+                </p>
+
+              </div>
+              <div>
+                <h3 className="episodes__description__rating">
+                  <FontAwesomeIcon
+                    icon={faStar}
+                  />
+                  {item.rating.average === null ? 'Unknown' : item.rating.average}
+                </h3>
+              </div>
+            </div>
           </div>
         ))}
       </div>

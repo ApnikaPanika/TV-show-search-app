@@ -2,6 +2,8 @@ import { useState, useEffect, FC } from 'react';
 import './IndividualShowInfo.scss';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { singleShowInfo } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
 
@@ -27,6 +29,8 @@ const IndividualShowInfo:FC<Props> = ({ setShowId }) => {
       .then((res) => setShowId(res.data.id));
   }, []);
 
+  console.log(oneShow);
+
   return (
     <div>
       <div>
@@ -38,15 +42,19 @@ const IndividualShowInfo:FC<Props> = ({ setShowId }) => {
                 <div className="IndividualShowInfo__photo__container">
                   <img
                     className="IndividualShowInfo__photo"
-                    src={item.image === null ? questionMark : item.image.medium}
+                    src={item.image === null ? questionMark : item.image.original}
                     alt="Show_logo"
                   />
                 </div>
                 <div className="IndividualShowInfo__text__container">
-                  <div>
-                    <h5 className="IndividualShowInfo__text">Rating:</h5>
+
+                  <div className="IndividualShowInfo__rating">
+                    <FontAwesomeIcon
+                      icon={faStar}
+                    />
                     <p>{item.rating.average === null ? 'Unknown' : item.rating.average}</p>
                   </div>
+                  <br />
                   <div>
                     <h5 className="IndividualShowInfo__text">Description:</h5>
                     <p>
@@ -54,6 +62,22 @@ const IndividualShowInfo:FC<Props> = ({ setShowId }) => {
                     item.summary === null ? 'This show has no summary' : item.summary.replace(/<(?<=<).*?(?=>)>/g, '')
                     }
                     </p>
+                  </div>
+                  <br />
+                  <div>
+                    <h5 className="IndividualShowInfo__text">Premiered:</h5>
+                    <p>
+                      {item.premiered === null ? 'Unknown' : item.premiered}
+                    </p>
+                  </div>
+                  <br />
+                  <div>
+                    <ul className="IndividualShowInfo__text">Genres:</ul>
+                    {item.genres === null || item.genres.length === 0
+                      ? <li className="IndividualShowInfo__genre">Unknown</li>
+                      : item.genres.map((Genre) => (
+                        <li className="IndividualShowInfo__genre">{Genre}</li>
+                      ))}
                   </div>
 
                 </div>

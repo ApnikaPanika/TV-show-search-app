@@ -23,6 +23,7 @@
     color: black;
     border-radius: 6px;
     background-color: white;
+    
 
     &:hover {
         transition: 0.4s;
@@ -34,4 +35,5 @@
 .searchResults__name {
     text-align: center;
     font-size: 22px;
+    margin-top: 5px;
 }

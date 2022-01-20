@@ -31,9 +31,19 @@
     margin-left: 15px;
     background-color: white;
     border-radius: 6px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .IndividualShowInfo__text {
     font-weight: bold;
+}
+
+.IndividualShowInfo__rating{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.IndividualShowInfo__genre{
+    margin-left: 10px;
 }

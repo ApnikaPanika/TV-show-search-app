@@ -31,7 +31,7 @@ const SearchResults = () => {
               <img
                 className="searchResults__image"
                 src={item.show.image === null ? questionMark
-                  : item.show.image?.medium}
+                  : item.show.image?.original}
                 alt="Movie_photo"
               />
               <h3 className="searchResults__name">{item.show.name}</h3>
