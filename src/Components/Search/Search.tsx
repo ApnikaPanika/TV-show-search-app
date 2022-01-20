@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import './Search.scss';
 import { FC } from 'react';
 
@@ -17,7 +16,6 @@ const Search:FC<Props> = ({ setSearchValue, searchValue, submitHandler }) => (
       onChange={(e) => setSearchValue(e.target.value)}
       placeholder="Show name"
     />
-
     <button className="search__button" onClick={submitHandler}>Search</button>
   </div>
 );

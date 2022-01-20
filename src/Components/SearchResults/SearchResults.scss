@@ -1,4 +1,4 @@
-.searchResults__all__item__container {
+.searchResults__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -12,7 +12,7 @@
     height: 351px;
 }
 
-.searchResults__one__item__container {
+.searchResults__item__container {
     padding: 7px;
     width: 250px;
 }
@@ -32,7 +32,7 @@
     }
 }
 
-.searchResults__name {
+.searchResults__show__name {
     text-align: center;
     font-size: 22px;
     margin-top: 5px;

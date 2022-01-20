@@ -29,8 +29,6 @@ const IndividualShowInfo:FC<Props> = ({ setShowId }) => {
       .then((res) => setShowId(res.data.id));
   }, []);
 
-  console.log(oneShow);
-
   return (
     <div>
       <div>

@@ -7,7 +7,7 @@ import logo from '../../Assets/Photos/arvatoLogo.png';
 const Header = () => (
   <div className="header__container">
     <img className="header__logo" src={logo} alt="logo" />
-    <Link to="/" className="header__home">
+    <Link to="/">
       <FontAwesomeIcon
         icon={faHome}
         className="header__home"

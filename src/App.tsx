@@ -5,18 +5,14 @@ import Home from './Pages/Home/Home';
 import IndividualShow from './Pages/IndividualShow/IndividualShow';
 import Header from './Components/Header/Header';
 
-const App = () => {
-  console.log(123);
-
-  return (
-    <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="show/:id" element={<IndividualShow />} />
-      </Routes>
-    </div>
-  );
-};
+const App = () => (
+  <div>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="show/:id" element={<IndividualShow />} />
+    </Routes>
+  </div>
+);
 
 export default App;
