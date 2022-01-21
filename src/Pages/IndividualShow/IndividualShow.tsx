@@ -1,6 +1,6 @@
 import './IndividualShow.scss';
 import { useState } from 'react';
-import IndividualShowInfo from '../../Components/IndividualShowInfo/IndividualShowInfo';
+import TvShowInfo from '../../Components/TvShowInfo/TvShowInfo';
 import Episodes from '../../Components/Episodes/Episodes';
 
 const IndividualShow = () => {
@@ -8,7 +8,7 @@ const IndividualShow = () => {
 
   return (
     <div>
-      <IndividualShowInfo setShowId={setShowId} />
+      <TvShowInfo setShowId={setShowId} />
       <Episodes showId={showId} />
     </div>
   );

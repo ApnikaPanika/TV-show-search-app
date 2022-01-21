@@ -12,7 +12,7 @@ const SearchResults = () => {
 
   const submitHandler = () => {
     axios
-      .get('https://api.tvmaze.com/search/shows', {
+      .get('/search/shows', {
         params: {
           q: searchValue,
         },
@@ -23,18 +23,17 @@ const SearchResults = () => {
 
   return (
     <div>
-      <Search setSearchValue={setSearchValue} searchValue={searchValue} submitHandler={submitHandler} />
+      <Search onSearch={setSearchValue} searchValue={searchValue} submitHandler={submitHandler} />
       <div className="searchResults__container">
-        {results.map((item) => (
-          <Link to={`show/${item.show.name}`} className="searchResults__link" key={item.score}>
+        {results.map(({ show }) => (
+          <Link to={`show/${show.name}`} className="searchResults__link" key={show.id}>
             <div className="searchResults__item__container">
               <img
                 className="searchResults__image"
-                src={item.show.image === null ? questionMark
-                  : item.show.image?.original}
+                src={show.image?.original || questionMark}
                 alt="Movie_photo"
               />
-              <h3 className="searchResults__show__name">{item.show.name}</h3>
+              <h3 className="searchResults__show__name">{show.name}</h3>
             </div>
           </Link>
         ))}

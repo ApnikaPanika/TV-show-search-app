@@ -1,46 +1,47 @@
-import { FC, useEffect, useState } from 'react';
+import {
+  FC, useEffect, useMemo, useState,
+} from 'react';
 import './Episodes.scss';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { episodeTypeList } from '../../Data/Types';
+import { EpisodeTypeList } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
 
-type Props = {
+type EpisodeProps = {
     showId: number
 }
 
-const Episodes:FC<Props> = ({ showId }) => {
-  const [allEpisodeList, setAllEpisodeList] = useState<episodeTypeList[]>([]);
+const Episodes:FC<EpisodeProps> = ({ showId }) => {
+  const [allEpisodeList, setAllEpisodeList] = useState<EpisodeTypeList[]>([]);
   const [seasonList, setSeasonList] = useState<number[]>([]);
-  const [choosenSeason, setChoosenSeason] = useState('1');
+  const [chosenSeason, setChosenSeason] = useState('1');
 
   useEffect(() => {
     if (showId) {
       axios
-        .get(`https://api.tvmaze.com/shows/${showId}/episodes`)
+        .get(`/shows/${showId}/episodes`)
         .then((res) => {
           setAllEpisodeList(res.data);
-          return res;
-        })
-        .then((res) => {
-          setSeasonList(res.data.map((item: episodeTypeList) => item.season));
+          setSeasonList(res.data.map(({ season } :EpisodeTypeList) => season));
         });
     }
   }, [showId]);
 
-  const optionList = seasonList.filter((item, index) => seasonList.indexOf(item) === index);
+  const optionList = useMemo(() => seasonList.filter((item, index) => seasonList.indexOf(item) === index),
+    [seasonList]);
 
-  const episodeList = allEpisodeList.filter((item) => item.season === +choosenSeason);
+  const episodeList = useMemo(() => allEpisodeList.filter((item) => item.season === +chosenSeason),
+    [allEpisodeList, chosenSeason]);
 
   return (
     <div className="episodes__container">
       <h1 className="episodes__heading"> Seasons & episodes </h1>
-      {episodeList.length === 0 ? 'There is no information available' : (
+      {!episodeList.length ? 'There is no information available' : (
         <div>
           <div>
             Season:
-            <select className="episodes__select" onChange={(e) => setChoosenSeason(e.target.value)}>
+            <select className="episodes__select" onChange={(e) => setChosenSeason(e.target.value)}>
               {optionList.map((option) => (
                 <option value={option} key={option}>{option}</option>
               ))}
@@ -48,14 +49,14 @@ const Episodes:FC<Props> = ({ showId }) => {
           </div>
 
           <div className="episodes__episodes__container">
-            {episodeList.map((item) => (
-              <div className="episodes__episode__container" key={item.id}>
+            {episodeList.map(({
+              image, id, number, name, summary, rating,
+            }) => (
+              <div className="episodes__episode__container" key={id}>
                 <div className="episodes__picture__container">
                   <img
                     className="episodes__small__picture"
-                    src={
-                item.image === null ? questionMark : item.image.original
-                }
+                    src={image?.original || questionMark}
                     alt="episode_photo"
                   />
                 </div>
@@ -63,14 +64,14 @@ const Episodes:FC<Props> = ({ showId }) => {
                   <div className="episodes__episode__description">
 
                     <h3 className="episodes__episode__header">
-                      {item.number}
+                      {number}
                       .
-                      {item.name}
+                      {name}
                     </h3>
 
                     <p>
-                      {item.summary === '' || item.summary === null ? 'There is no description, for this episode.'
-                        : item.summary.replace(/<(?<=<).*?(?=>)>/g, '')}
+                      {summary === '' || summary === null ? 'There is no description, for this episode.'
+                        : summary.replace(/<(?<=<).*?(?=>)>/g, '')}
                     </p>
 
                   </div>
@@ -79,7 +80,7 @@ const Episodes:FC<Props> = ({ showId }) => {
                       <FontAwesomeIcon
                         icon={faStar}
                       />
-                      {item.rating.average === null ? 'Unknown' : item.rating.average}
+                      {rating.average || 'Unknown'}
                     </h3>
                   </div>
                 </div>

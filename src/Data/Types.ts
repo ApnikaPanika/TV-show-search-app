@@ -106,7 +106,7 @@ export type singleShowInfo = {
   }
 };
 
-export type episodeTypeList = {
+export type EpisodeTypeList = {
         id: number,
         url: string,
         name: string,
