@@ -12,39 +12,50 @@
     padding: 0 0 5px 0;
 }
 
+.episodes__season--container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.episodes__season--text{
+    font-size: 20px;
+}
+
 .episodes__select {
     border-radius: 6px;
     padding: 3px;
-    margin: 0 0 5px 5px;
     width: 20%;
+    font-size: 20px;
 }
 
-.episodes__episodes__container {
+.episodes__episodes--container {
     display: flex;
     flex-direction: column;
 }
 
-.episodes__picture__container{
+.episodes__picture--container{
     display: flex;
     align-items: center;
 }
 
-.episodes__episode__container {
+.episodes__episode--container {
     display: flex;
     gap: 10px;
     padding: 10px;
 }
 
-.episodes__episode__container:nth-child(2n+1) {
+.episodes__episode--container:nth-child(2n+1) {
     background-color: rgb(241, 241, 241);
 }
 
-.episodes__small__picture {
-    width: 120px;
+.episodes__picture {
+    width: 130px;
     border-radius: 6px;
 }
 
-.episodes__episode__description__container {
+.episodes__description--container {
     width: 100%;
     gap: 10px;
     display: flex;
@@ -52,19 +63,19 @@
     align-items: center;
 }
 
-.episodes__episode__description {
+.episodes__description {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
 }
 
-.episodes__episode__header {
+.episodes__episode--header {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 }
 
-.episodes__description__rating {
+.episodes__description--rating {
     display: flex;
     flex-shrink: 0;
 }

@@ -39,8 +39,8 @@ const Episodes:FC<EpisodeProps> = ({ showId }) => {
       <h1 className="episodes__heading"> Seasons & episodes </h1>
       {!episodeList.length ? 'There is no information available' : (
         <div>
-          <div>
-            Season:
+          <div className="episodes__season--container">
+            <p className="episodes__season--text">Season:</p>
             <select className="episodes__select" onChange={(e) => setChosenSeason(e.target.value)}>
               {optionList.map((option) => (
                 <option value={option} key={option}>{option}</option>
@@ -48,22 +48,22 @@ const Episodes:FC<EpisodeProps> = ({ showId }) => {
             </select>
           </div>
 
-          <div className="episodes__episodes__container">
+          <div className="episodes__episodes--container">
             {episodeList.map(({
               image, id, number, name, summary, rating,
             }) => (
-              <div className="episodes__episode__container" key={id}>
-                <div className="episodes__picture__container">
+              <div className="episodes__episode--container" key={id}>
+                <div className="episodes__picture--container">
                   <img
-                    className="episodes__small__picture"
+                    className="episodes__picture"
                     src={image?.original || questionMark}
                     alt="episode_photo"
                   />
                 </div>
-                <div className="episodes__episode__description__container">
-                  <div className="episodes__episode__description">
+                <div className="episodes__description__container">
+                  <div className="episodes__description">
 
-                    <h3 className="episodes__episode__header">
+                    <h3 className="episodes__episode--header">
                       {number}
                       .
                       {name}
@@ -76,7 +76,7 @@ const Episodes:FC<EpisodeProps> = ({ showId }) => {
 
                   </div>
                   <div>
-                    <h3 className="episodes__description__rating">
+                    <h3 className="episodes__description--rating">
                       <FontAwesomeIcon
                         icon={faStar}
                       />

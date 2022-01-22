@@ -8,14 +8,14 @@
     border-radius: 6px;
 }
 
-.IndividualShowInfo__info__part {
+.IndividualShowInfo__info--container{
     display: flex;
     justify-content: center;
     margin: 0 15px;
     
 }
 
-.IndividualShowInfo__photo__container {
+.IndividualShowInfo__photo--container {
     background-color: white;
     padding: 7px;
     border-radius: 6px;
@@ -27,7 +27,7 @@
 
 }
 
-.IndividualShowInfo__text__container {
+.IndividualShowInfo__text--container {
     margin-left: 15px;
     background-color: white;
     border-radius: 6px;
@@ -36,7 +36,7 @@
 
 .IndividualShowInfo__text {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .IndividualShowInfo__rating{

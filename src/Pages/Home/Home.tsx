@@ -1,4 +1,3 @@
-import './Home.scss';
 import SearchResults from '../../Components/SearchResults/SearchResults';
 
 const Home = () => (

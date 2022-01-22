@@ -1,4 +1,3 @@
-import './IndividualShow.scss';
 import { useState } from 'react';
 import TvShowInfo from '../../Components/TvShowInfo/TvShowInfo';
 import Episodes from '../../Components/Episodes/Episodes';

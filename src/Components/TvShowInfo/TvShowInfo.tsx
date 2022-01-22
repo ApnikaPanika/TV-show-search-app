@@ -37,15 +37,15 @@ const TvShowInfo:FC<TvShowProps> = ({ setShowId }) => {
           }) => (
             <div key={name} className="IndividualShowInfo__container">
               <h1 className="IndividualShowInfo__name">{name}</h1>
-              <div className="IndividualShowInfo__info__part">
-                <div className="IndividualShowInfo__photo__container">
+              <div className="IndividualShowInfo__info--container">
+                <div className="IndividualShowInfo__photo--container">
                   <img
                     className="IndividualShowInfo__photo"
                     src={image?.original || questionMark}
                     alt="Show_logo"
                   />
                 </div>
-                <div className="IndividualShowInfo__text__container">
+                <div className="IndividualShowInfo__text--container">
 
                   <div className="IndividualShowInfo__rating">
                     <FontAwesomeIcon

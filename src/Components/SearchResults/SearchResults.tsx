@@ -2,6 +2,8 @@ import './SearchResults.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faGripHorizontal } from '@fortawesome/free-solid-svg-icons';
 import Search from '../Search/Search';
 import { searchInfoType } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
@@ -9,6 +11,7 @@ import questionMark from '../../Assets/Photos/questionMark.png';
 const SearchResults = () => {
   const [results, setResults] = useState<searchInfoType[]>([]);
   const [searchValue, setSearchValue] = useState('');
+  const [changeLook, setChangeLook] = useState(false);
 
   const submitHandler = () => {
     axios
@@ -21,19 +24,30 @@ const SearchResults = () => {
       ));
   };
 
+  const viewType = changeLook ? 'grid' : 'box';
+
   return (
     <div>
       <Search onSearch={setSearchValue} searchValue={searchValue} submitHandler={submitHandler} />
-      <div className="searchResults__container">
+
+      <div className="searchResults__button--container">
+        <button className="searchResults__button" onClick={() => setChangeLook(!changeLook)}>
+          <FontAwesomeIcon
+            icon={changeLook ? faGripHorizontal : faBars}
+          />
+        </button>
+      </div>
+
+      <div className={`searchResults__container--${viewType}`}>
         {results.map(({ show }) => (
-          <Link to={`show/${show.name}`} className="searchResults__link" key={show.id}>
-            <div className="searchResults__item__container">
+          <Link to={`show/${show.name}`} className={`searchResults__link--${viewType}`} key={show.id}>
+            <div className={`searchResults__item--${viewType}`}>
               <img
-                className="searchResults__image"
+                className={`searchResults__image--${viewType}`}
                 src={show.image?.original || questionMark}
                 alt="Movie_photo"
               />
-              <h3 className="searchResults__show__name">{show.name}</h3>
+              <h3 className={`searchResults__title--${viewType}`}>{show.name}</h3>
             </div>
           </Link>
         ))}
