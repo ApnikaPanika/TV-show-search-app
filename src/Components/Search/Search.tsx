@@ -14,7 +14,7 @@ const Search:FC<SearchProps> = ({ onSearch, searchValue, submitHandler }) => (
       type="text"
       value={searchValue}
       onChange={(e) => onSearch(e.target.value)}
-      placeholder="TV Show name"
+      placeholder="TV show name"
     />
     <button className="search__button" onClick={submitHandler}>Search</button>
   </div>

@@ -13,8 +13,8 @@ const SearchResults = () => {
   const [searchValue, setSearchValue] = useState('');
   const [changeLook, setChangeLook] = useState(false);
 
-  const submitHandler = () => {
-    axios
+  const submitHandler = async () => {
+    await axios
       .get('/search/shows', {
         params: {
           q: searchValue,
@@ -34,13 +34,18 @@ const SearchResults = () => {
         <button className="searchResults__button" onClick={() => setChangeLook(!changeLook)}>
           <FontAwesomeIcon
             icon={changeLook ? faGripHorizontal : faBars}
+            title="icon"
           />
         </button>
       </div>
 
       <div className={`searchResults__container--${viewType}`}>
         {results.map(({ show }) => (
-          <Link to={`show/${show.name}`} className={`searchResults__link--${viewType}`} key={show.id}>
+          <Link
+            to={`show/${show.name}`}
+            className={`searchResults__link--${viewType}`}
+            key={show.id}
+          >
             <div className={`searchResults__item--${viewType}`}>
               <img
                 className={`searchResults__image--${viewType}`}

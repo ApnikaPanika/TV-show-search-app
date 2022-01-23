@@ -8,7 +8,7 @@ describe('<Search />', () => {
     render(<Search onSearch={mockFunction} searchValue="" submitHandler={mockFunction} />);
 
     expect(screen.getByText('Search')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('TV Show name')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('TV show name')).toBeInTheDocument();
   });
 
   it('should be able to write text in input field', () => {
@@ -18,7 +18,7 @@ describe('<Search />', () => {
       return <Search searchValue={inputValue} onSearch={setInputValue} submitHandler={mockFunction} />;
     };
     render(<MockComponent />);
-    const input = screen.getByPlaceholderText('TV Show name') as HTMLInputElement;
+    const input = screen.getByPlaceholderText('TV show name') as HTMLInputElement;
 
     fireEvent.change(input, { target: { value: 'Grimm' } });
 

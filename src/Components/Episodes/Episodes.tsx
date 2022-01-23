@@ -60,7 +60,7 @@ const Episodes:FC<EpisodeProps> = ({ showId }) => {
                     alt="episode_photo"
                   />
                 </div>
-                <div className="episodes__description__container">
+                <div className="episodes__description--container">
                   <div className="episodes__description">
 
                     <h3 className="episodes__episode--header">
