@@ -1,0 +1,35 @@
+.Error404__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Error404__heading, .Error404__home--container{
+    margin: 70px 10px 0 10px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+
+.Error404__home--container{
+    display: flex;
+    gap: 10px;
+} 
+
+.Error404__home--heading{
+    padding: 5px;
+}
+
+.Error404__home--button{
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(9, 121, 184, 255);
+    padding: 5px;
+    border-radius: 6px;
+    &:hover{
+        color: black;
+        transition: 0.4s;
+    }
+}

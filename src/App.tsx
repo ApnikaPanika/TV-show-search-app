@@ -5,6 +5,7 @@ import axios from 'axios';
 import Home from './Pages/Home/Home';
 import IndividualShow from './Pages/IndividualShow/IndividualShow';
 import Header from './Components/Header/Header';
+import Error404 from './Pages/Error/Error404';
 
 axios.defaults.baseURL = 'https://api.tvmaze.com';
 
@@ -14,6 +15,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="show/:slug" element={<IndividualShow />} />
+      <Route path="*" element={<Error404 />} />
     </Routes>
   </div>
 );

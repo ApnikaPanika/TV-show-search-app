@@ -28,6 +28,8 @@ const TvShowInfo:FC<TvShowProps> = ({ setShowId }) => {
       });
   }, []);
 
+  console.log(slug);
+
   return (
     <div>
       {oneShow.map(({
