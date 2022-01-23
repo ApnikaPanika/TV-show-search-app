@@ -42,7 +42,7 @@ const SearchResults = () => {
       <div className={`searchResults__container--${viewType}`}>
         {results.map(({ show }) => (
           <Link
-            to={`show/${show.name}`}
+            to={`show/${show.id}`}
             className={`searchResults__link--${viewType}`}
             key={show.id}
           >

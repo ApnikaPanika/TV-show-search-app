@@ -13,22 +13,16 @@ type TvShowProps = {
 
 const TvShowInfo:FC<TvShowProps> = ({ setShowId }) => {
   const [oneShow, setOneShow] = useState<singleShowInfo[]>([]);
-  const { slug } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get('/singlesearch/shows', {
-        params: {
-          q: slug,
-        },
-      })
+      .get(`/shows/${id}`)
       .then((res) => {
         setOneShow([res.data]);
         setShowId(res.data.id);
       });
   }, []);
-
-  console.log(slug);
 
   return (
     <div>
