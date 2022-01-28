@@ -49,5 +49,8 @@ Launches the test runner in the interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Hope you enjoy, Toms :) 
+<br/>
+
+Hope you enjoy,
+Toms <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" width="18" height="18"/>
 
