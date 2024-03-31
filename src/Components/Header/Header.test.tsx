@@ -4,12 +4,11 @@ import Header from './Header';
 
 describe('<Header />', () => {
   it('should render with initial content', () => {
-    const MockComponent = () => (
+    render(
       <BrowserRouter>
         <Header />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
-    render(<MockComponent />);
 
     expect(screen.getByAltText('logo')).toBeInTheDocument();
   });

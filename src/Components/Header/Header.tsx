@@ -8,7 +8,6 @@ const Header = () => (
       <Link to="/">
         <img className="header__logo" src={logo} alt="logo" />
       </Link>
-
     </div>
   </div>
 );
