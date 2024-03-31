@@ -1,5 +1,4 @@
 import './Search.scss';
-import { FC } from 'react';
 
 type SearchProps = {
     onSearch: (value: string) => void
@@ -7,7 +6,7 @@ type SearchProps = {
     submitHandler: () => void
 }
 
-const Search:FC<SearchProps> = ({ onSearch, searchValue, submitHandler }) => (
+const Search = ({ onSearch, searchValue, submitHandler }: SearchProps) => (
   <div className="search__container">
     <input
       className="search__input"

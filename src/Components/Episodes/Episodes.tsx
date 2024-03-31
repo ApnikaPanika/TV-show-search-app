@@ -1,5 +1,5 @@
 import {
-  FC, useEffect, useMemo, useState,
+  useEffect, useMemo, useState,
 } from 'react';
 import './Episodes.scss';
 import axios from 'axios';
@@ -12,7 +12,7 @@ type EpisodeProps = {
     showId: number
 }
 
-const Episodes:FC<EpisodeProps> = ({ showId }) => {
+const Episodes = ({ showId }: EpisodeProps) => {
   const [allEpisodeList, setAllEpisodeList] = useState<EpisodeTypeList[]>([]);
   const [seasonList, setSeasonList] = useState<number[]>([]);
   const [chosenSeason, setChosenSeason] = useState('1');

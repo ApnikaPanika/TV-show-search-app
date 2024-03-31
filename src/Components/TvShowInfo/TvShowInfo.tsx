@@ -1,4 +1,4 @@
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect } from 'react';
 import './TvShowInfo.scss';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -11,7 +11,7 @@ type TvShowProps = {
     setShowId: (id: number) => void
 }
 
-const TvShowInfo:FC<TvShowProps> = ({ setShowId }) => {
+const TvShowInfo = ({ setShowId }: TvShowProps) => {
   const [oneShow, setOneShow] = useState<singleShowInfo[]>([]);
   const { id } = useParams();
 
