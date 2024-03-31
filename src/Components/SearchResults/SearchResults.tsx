@@ -1,9 +1,9 @@
 import './SearchResults.scss';
 import { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faGripHorizontal } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 import Search from '../Search/Search';
 import { searchInfoType } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
@@ -29,9 +29,12 @@ const SearchResults = () => {
   return (
     <div>
       <Search onSearch={setSearchValue} searchValue={searchValue} submitHandler={submitHandler} />
-
       <div className="searchResults__button--container">
-        <button className="searchResults__button" onClick={() => setChangeLook(!changeLook)}>
+        <button
+          className="searchResults__button"
+          onClick={() => setChangeLook(!changeLook)}
+          aria-label="Change look button"
+        >
           <FontAwesomeIcon
             icon={changeLook ? faGripHorizontal : faBars}
             title="icon"
