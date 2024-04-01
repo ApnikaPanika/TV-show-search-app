@@ -7,7 +7,7 @@ import axios from 'axios';
 import Search from '../Search/Search';
 import { searchInfoType } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
-import NothingFound from './NothingFound/NothingFound';
+import NothingFound from './Components/NothingFound/NothingFound';
 
 const SearchResults = () => {
   const [results, setResults] = useState<searchInfoType[]>([]);
