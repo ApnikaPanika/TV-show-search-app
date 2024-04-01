@@ -7,11 +7,13 @@ import axios from 'axios';
 import Search from '../Search/Search';
 import { searchInfoType } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
+import NothingFound from './NothingFound/NothingFound';
 
 const SearchResults = () => {
   const [results, setResults] = useState<searchInfoType[]>([]);
   const [searchValue, setSearchValue] = useState('');
   const [changeLook, setChangeLook] = useState(false);
+  const [emptyResponse, setEmptyResponse] = useState(false);
 
   const submitHandler = async () => {
     await axios
@@ -20,8 +22,14 @@ const SearchResults = () => {
           q: searchValue,
         },
       })
-      .then((res) => (setResults(res.data)
-      ));
+      .then((res) => {
+        if (res.data.length === 0) {
+          setEmptyResponse(true);
+        } else {
+          setEmptyResponse(false);
+        }
+        setResults(res.data);
+      });
   };
 
   const viewType = changeLook ? 'grid' : 'box';
@@ -43,6 +51,7 @@ const SearchResults = () => {
       </div>
 
       <div className={`searchResults__container--${viewType}`}>
+        {emptyResponse && <NothingFound />}
         {results.map(({ show }) => (
           <Link
             to={`show/${show.id}`}
