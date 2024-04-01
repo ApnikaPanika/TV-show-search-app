@@ -35,7 +35,7 @@ const SearchResults = () => {
   const viewType = changeLook ? 'grid' : 'box';
 
   return (
-    <div>
+    <>
       <Search onSearch={setSearchValue} searchValue={searchValue} submitHandler={submitHandler} />
       <div className="searchResults__button--container">
         <button
@@ -70,7 +70,7 @@ const SearchResults = () => {
         ))}
 
       </div>
-    </div>
+    </>
   );
 };
 
