@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faGripHorizontal } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import Search from '../Search/Search';
 import { searchInfoType } from '../../Data/Types';
 import questionMark from '../../Assets/Photos/questionMark.png';
 import NothingFound from './Components/NothingFound/NothingFound';
+import { Search } from '../Search/Search';
 
 const SearchResults = () => {
   const [results, setResults] = useState<searchInfoType[]>([]);

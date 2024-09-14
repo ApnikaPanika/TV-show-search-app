@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import TvShowInfo from '../../Components/TvShowInfo/TvShowInfo';
-import Episodes from '../../Components/Episodes/Episodes';
+import { Episodes } from '../../Components/Episodes/Episodes';
+import { TvShowInfo } from '../../Components/TvShowInfo/TvShowInfo';
 
 const IndividualShow = () => {
   const [showId, setShowId] = useState(0);

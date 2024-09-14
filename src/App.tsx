@@ -4,8 +4,8 @@ import './App.scss';
 import axios from 'axios';
 import Home from './Pages/Home/Home';
 import IndividualShow from './Pages/IndividualShow/IndividualShow';
-import Header from './Components/Header/Header';
 import Error404 from './Pages/Error/Error404';
+import { Header } from './Components/Header/Header';
 
 axios.defaults.baseURL = 'https://api.tvmaze.com';
 

@@ -12,7 +12,7 @@ type EpisodeProps = {
     showId: number
 }
 
-const Episodes = ({ showId }: EpisodeProps) => {
+export const Episodes = ({ showId }: EpisodeProps) => {
   const [allEpisodeList, setAllEpisodeList] = useState<EpisodeTypeList[]>([]);
   const [seasonList, setSeasonList] = useState<number[]>([]);
   const [chosenSeason, setChosenSeason] = useState('1');
@@ -92,5 +92,3 @@ const Episodes = ({ showId }: EpisodeProps) => {
     </div>
   );
 };
-
-export default Episodes;

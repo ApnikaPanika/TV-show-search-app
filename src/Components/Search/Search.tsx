@@ -6,7 +6,7 @@ type SearchProps = {
     submitHandler: () => void
 }
 
-const Search = ({ onSearch, searchValue, submitHandler }: SearchProps) => (
+export const Search = ({ onSearch, searchValue, submitHandler }: SearchProps) => (
   <div className="search__container">
     <input
       className="search__input"
@@ -18,5 +18,3 @@ const Search = ({ onSearch, searchValue, submitHandler }: SearchProps) => (
     <button className="search__button" onClick={submitHandler}>Search</button>
   </div>
 );
-
-export default Search;

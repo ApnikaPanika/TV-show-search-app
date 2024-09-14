@@ -11,7 +11,7 @@ type TvShowProps = {
     setShowId: (id: number) => void
 }
 
-const TvShowInfo = ({ setShowId }: TvShowProps) => {
+export const TvShowInfo = ({ setShowId }: TvShowProps) => {
   const [oneShow, setOneShow] = useState<singleShowInfo[]>([]);
   const { id } = useParams();
 
@@ -80,5 +80,3 @@ const TvShowInfo = ({ setShowId }: TvShowProps) => {
     </div>
   );
 };
-
-export default TvShowInfo;

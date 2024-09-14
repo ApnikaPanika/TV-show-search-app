@@ -2,7 +2,7 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/Photos/arvatoLogo.png';
 
-const Header = () => (
+export const Header = () => (
   <div className="header__container">
     <div className="header__logo--container">
       <Link to="/">
@@ -11,5 +11,3 @@ const Header = () => (
     </div>
   </div>
 );
-
-export default Header;

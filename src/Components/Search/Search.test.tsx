@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useState } from 'react';
-import Search from './Search';
+import { Search } from './Search';
 
 describe('<Search />', () => {
   it('should render with initial content', () => {
